@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="WorldState investor presentation - independent economic-state verification for autonomous agents.">
+  <title>WorldState - Investor deck</title>
+  <link rel="stylesheet" href="deck.css">
+  <link rel="stylesheet" href="deck-refinements.css">
+</head>
+<body class="deck-page">
+<main class="deck" aria-label="WorldState investor deck">
+  <section class="slide cover" data-slide="01">
+    <header class="slide-header"><a class="deck-brand" href="./" aria-label="WorldState website"><span class="deck-mark"></span>WorldState</a><span>INVESTOR DECK / NOV 2026</span></header>
+    <div class="cover-copy"><p class="kicker">Independent economic-state verification</p><h1>The agent said success.<br><em>Did the world agree?</em></h1><p class="lead">Correctness infrastructure for autonomous actions that change money, balances, and business obligations.</p></div>
+    <div class="cover-trace" aria-label="Agent claim compared with economic outcome"><div><span>AGENT CLAIM</span><strong>SUCCESS</strong></div><i></i><div><span>ECONOMIC EFFECT</span><strong>2 x REFUND</strong></div><i class="break"></i><div class="alert"><span>INDEPENDENT VERDICT</span><strong>VIOLATION</strong></div></div>
+    <footer class="slide-footer"><span>Harsha Aditya / Founder</span><span>01 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="02">
+    <header class="slide-header"><span>01 / WHY NOW</span><span>AUTHORITY IS RISING FASTER THAN OVERSIGHT</span></header>
+    <div class="statement signal-statement"><p class="kicker">The shift is measurable</p><h2>Agents are gaining transaction authority.<br><em>Oversight still trails.</em></h2></div>
+    <div class="deck-signals"><article><span>MCKINSEY · AUG 2026</span><strong>40%</strong><p>of respondents at $1B+ companies report scaling AI agents.</p></article><article><span>VISA · 2026 REPORT</span><strong>63%</strong><p>of surveyed merchants are exploring or implementing agentic payments.</p></article><article><span>DELOITTE · APR 2026</span><strong>21%</strong><p>of surveyed enterprises report mature agentic-AI governance.</p></article></div>
+    <div class="why-gap"><span>SIMULATED / AGENT CLAIM</span><strong>Refund complete</strong><i>TIMEOUT · RETRY · ASYNC SETTLEMENT</i><b>LEDGER SHOWS 2 EFFECTS</b></div>
+    <div class="deck-news"><span>REAL-WORLD SIGNAL</span><p>Visa announced a live B2B pilot in which trusted agents complete approved invoice payments across supplier portals.</p><a href="https://www.visa.com/en-us/thought-leadership/innovation/first-live-pilot-for-ai-payments">VISA · OCT 2026 ↗</a></div>
+    <p class="deck-sources">Sources: McKinsey, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-ai-operating-system-a-new-way-for-ceos-to-run-the-enterprise">The AI operating system</a>; Visa, <a href="https://www.visaacceptance.com/content/dam/documents/campaign/fraud-report/2026_Global_eCommerce_PaymentsandFraudReport.pdf">2026 Global eCommerce Payments &amp; Fraud Report</a>; Deloitte, <a href="https://www.deloitte.com/us/en/insights/topics/emerging-technologies/ai-agents-scaling-faster.html">Agentic AI is scaling faster than guardrails</a>. External market evidence, not WorldState validation.</p>
+    <footer class="slide-footer"><span>Execution is emerging; mature controls remain scarce</span><span>02 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="03">
+    <header class="slide-header"><span>02 / PRODUCT</span><span>AN INDEPENDENT CONTROL PLANE</span></header>
+    <div class="statement narrow"><p class="kicker">WorldState</p><h2>Model the world. Stress the agent. Verify the consequence.</h2></div>
+    <ol class="system-rail"><li><span>01</span><h3>Model</h3><p>Explicit provider semantics, financial policy, and finite domains.</p><code>WorldSpec</code></li><li><span>02</span><h3>Explore</h3><p>Generate bounded commands and paths from the specification.</p><code>State search</code></li><li><span>03</span><h3>Disturb</h3><p>Inject timeouts, duplicates, delays, reordering, and partial failure.</p><code>Fault schedule</code></li><li><span>04</span><h3>Verify</h3><p>Check state-based financial invariants, independent of narration.</p><code>Oracle</code></li><li><span>05</span><h3>Replay</h3><p>Reduce and deterministically reproduce the counterexample.</p><code>Evidence</code></li></ol>
+    <footer class="slide-footer"><span>Implemented locally in Explorer v0.2</span><span>03 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="04">
+    <header class="slide-header"><span>03 / PRODUCT PROOF</span><span>SYNTHETIC HELD-OUT MUTATION</span></header>
+    <div class="statement compact"><p class="kicker amber">Controlled synthetic example</p><h2>One retained key. Two economic effects. One reproducible failure.</h2></div>
+    <div class="counterexample"><div class="trace-step"><small>01 / REQUEST</small><strong>refund.create</strong><code>example key / 1,000 minor</code></div><i></i><div class="trace-step"><small>02 / FAULT</small><strong>Timeout after effect</strong><code>outcome unknown</code></div><i></i><div class="trace-step"><small>03 / RETRY</small><strong>Same retained key</strong><code>synthetic cache defect</code></div><i></i><div class="trace-step"><small>04 / SETTLE</small><strong>Two refunds succeed</strong><code>economic duplicate</code></div></div>
+    <div class="verdict-bar"><span>INDEPENDENT ORACLE</span><strong>FIN-IDEMPOTENCY-EFFECT</strong><b>FAIL</b><p>Automatically reached from WorldSpec inputs. The mutation contains no hard-coded amount, key value, or event sequence.</p></div>
+    <p class="disclaimer">Synthetic held-out mutation, not a production incident. Independent authorship is not established.</p>
+    <footer class="slide-footer"><span>Deterministic replay / final-state hash recorded</span><span>04 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="05">
+    <header class="slide-header"><span>04 / EVIDENCE</span><span>WHAT IS VERIFIED TODAY</span></header>
+    <div class="statement compact"><p class="kicker">Versioned local evidence</p><h2>Measured progress, with the bounds left visible.</h2></div>
+    <div class="metrics-grid"><article class="complete"><span>SMALL RUN</span><strong>531</strong><p>semantic states</p><dl><div><dt>1,092</dt><dd>candidates</dd></div><div><dt>570</dt><dd>pruned</dd></div><div><dt>0</dt><dd>frontier</dd></div></dl><b>BOUNDED COMPLETE</b><small>Selected finite domains and fault combinations only</small></article><article><span>MEDIUM RUN</span><strong>2,500</strong><p>semantic states</p><dl><div><dt>16,155</dt><dd>candidates</dd></div><div><dt>2,896</dt><dd>pruned</dd></div><div><dt>10,796</dt><dd>frontier</dd></div></dl><b>NOT COMPLETE</b><small>Stopped at explicit state bound</small></article><article><span>HELD-OUT RUN</span><strong>2,000</strong><p>semantic states</p><dl><div><dt>4,928</dt><dd>candidates</dd></div><div><dt>1,352</dt><dd>pruned</dd></div><div><dt>1,577</dt><dd>frontier</dd></div></dl><b>NOT COMPLETE</b><small>Synthetic provider mutation</small></article></div>
+    <div class="proof-strip"><span><b>164</b> tests passed</span><span><b>2</b> skipped</span><span><b>5 &rarr; 4</b> reduction</span><span><b>8</b> fault/action classes</span></div>
+    <footer class="slide-footer"><span>Source: curated local synthetic benchmark snapshot / Nov 2026</span><span>05 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="06">
+    <header class="slide-header"><span>05 / WEDGE</span><span>WHO BUYS FIRST</span></header>
+    <div class="statement compact"><p class="kicker">Start where ambiguity moves money</p><h2>Refund automation is the proving ground.</h2></div>
+    <div class="buyer-layout"><div class="wedge-core"><span>INITIAL WORKFLOW</span><strong>REFUNDS</strong><p>Authorization, idempotency, asynchronous settlement, retries, ledger truth, and customer-facing completion in one narrow surface.</p></div><div class="buyer-cards"><article><small>BUYER</small><h3>AI product and platform teams</h3><p>Before an agent receives write authority in a financial workflow.</p></article><article><small>TRIGGER</small><h3>Moving from copilot to execution</h3><p>Observability exists, but outcome assurance and reproducible failure evidence do not.</p></article><article><small>VALUE</small><h3>Catch economic failures before rollout</h3><p>Turn ambiguous incidents into deterministic counterexamples engineers can fix.</p></article></div></div>
+    <footer class="slide-footer"><span>Design-partner thesis / not yet customer-validated</span><span>06 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="07">
+    <header class="slide-header"><span>06 / OPPORTUNITY</span><span>FROM REFUNDS TO ECONOMIC AGENTS</span></header>
+    <div class="statement compact opportunity-statement"><p class="kicker">The broader infrastructure opportunity</p><h2>Reusable models can turn one wedge into a verification layer.</h2></div>
+    <div class="expansion-map expansion-moat"><div class="rings"><span class="r1">REFUNDS</span><span class="r2">PAYMENTS</span><span class="r3">FINANCIAL OPERATIONS</span><span class="r4">BUSINESS-STATE ACTIONS</span></div><div class="market-copy"><h3>What could compound</h3><div class="moat-list"><article><b>01</b><p><strong>Provider semantics</strong><br>Executable retry, timing, idempotency, and settlement models.</p></article><article><b>02</b><p><strong>Reusable WorldSpecs</strong><br>Versioned workflows and invariant libraries.</p></article><article><b>03</b><p><strong>Counterexample corpus</strong><br>Minimized failures and customer-specific release workflows.</p></article></div><div class="assumption"><span>EXPANSION THESIS / NOT CURRENT COVERAGE</span><p>Potential paths include transfers, payouts, trading, billing, procurement, and other state-changing workflows. Market inputs remain unvalidated; no TAM is claimed.</p></div></div></div>
+    <p class="disclaimer">Defensibility could compound with calibration and integration. No proprietary provider corpus or customer workflow network is established today.</p>
+    <footer class="slide-footer"><span>Expansion is roadmap, not current coverage</span><span>07 / 09</span></footer>
+  </section>
+  <section class="slide" data-slide="08">
+    <header class="slide-header"><span>07 / NEXT MILESTONE</span><span>WHAT FUNDING UNLOCKS</span></header>
+    <div class="statement compact"><p class="kicker">De-risk the category in sequence</p><h2>Move from rigorous simulation to grounded workflow validation.</h2></div>
+    <div class="roadmap"><article class="now"><small>NOW / IMPLEMENTED</small><h3>Explorer v0.2</h3><p>WorldSpec-driven bounded search, state oracle, synthetic holdout, deterministic replay, minimization.</p></article><b>&rarr;</b><article><small>NEXT</small><h3>Provider calibration</h3><p>Authorized sandbox conformance, richer semantics, independently authored holdouts.</p></article><b>&rarr;</b><article><small>THEN</small><h3>Design-partner workflows</h3><p>Model real invariants, integrate with CI, measure defect discovery and engineering value.</p></article></div>
+    <div class="risk-grid"><span>KEY RISKS</span><p>Provider fidelity</p><p>Concurrent in-flight idempotency</p><p>Customer access</p><p>State-space scalability</p></div>
+    <p class="candid-line">No customers, revenue, financing, production integrations, or comprehensive path coverage are claimed.</p>
+    <footer class="slide-footer"><span>Capital converts the strongest unknowns into measured evidence</span><span>08 / 09</span></footer>
+  </section>
+  <section class="slide close" data-slide="09">
+    <header class="slide-header"><a class="deck-brand" href="./" aria-label="WorldState website"><span class="deck-mark"></span>WorldState</a><span>THE ASK</span></header>
+    <div class="close-grid"><div><p class="kicker">Independent truth for economic agents</p><h2>Help build the verification layer before autonomous execution becomes ordinary.</h2><p class="lead">Seeking investors and design partners who believe reliable agent action requires more than traces.</p></div><aside><span>FOUNDER</span><h3>Harsha Aditya</h3><p>Quant<br>Indian Institute of Technology Kanpur</p><a href="mailto:ranjanroct23@gmail.com?subject=WorldState%20investor%20conversation">ranjanroct23@gmail.com</a><hr><small>Current stage: technical foundation and controlled synthetic evidence. No financing commitment is implied.</small></aside></div>
+    <footer class="slide-footer"><span>worldstate / independent economic-state verification</span><span>09 / 09</span></footer>
+  </section>
+</main>
+<script src="deck-preview.js"></script>
+</body>
+</html>

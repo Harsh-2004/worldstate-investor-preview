@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "0.2.0",
+  "metadata": {
+    "benchmarkClassification": "CONTROLLED_SYNTHETIC",
+    "independentAuthorshipEstablished": false,
+    "externalProviderExecution": false,
+    "paidApiCalls": false
+  },
+  "benchmarks": {
+    "small": {
+      "metrics": {
+        "uniqueEconomicStates": 531,
+        "transitionsExercised": [
+          "fail:failed",
+          "fault:timeout_before_execution",
+          "notification:delivered",
+          "operation:retrieve_refund",
+          "provider:idempotency_replay",
+          "requested->pending",
+          "requested->pending+timeout",
+          "settle:succeeded"
+        ],
+        "candidatesGenerated": 1092,
+        "failuresFound": 1,
+        "boundedComplete": true,
+        "boundedCompleteReason": "Finite WorldSpec domains and selected fault combinations were exhausted with an empty frontier. This is not exhaustive coverage of real providers or all financial workflows."
+      }
+    },
+    "syntheticHeldOutMutation": {
+      "counterexamples": [
+        {
+          "invariantId": "FIN-IDEMPOTENCY-EFFECT",
+          "cause": "synthetic provider-contract mutation: retained idempotency result evicted after an ambiguous outcome",
+          "replayMatched": true,
+          "economicDiscrepancyMinor": 1000,
+          "minimizedTrace": [
+            {
+              "at": 0,
+              "transition": "requested->pending+timeout",
+              "response": { "status": "timeout", "effect": "unknown" }
+            },
+            {
+              "at": 0,
+              "transition": "requested->pending",
+              "response": { "status": "accepted" }
+            },
+            {
+              "at": 0,
+              "transition": "settle:succeeded",
+              "response": { "status": "succeeded" }
+            },
+            {
+              "at": 1,
+              "transition": "settle:succeeded",
+              "response": { "status": "succeeded" }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
